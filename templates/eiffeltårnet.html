@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Den smukkeste konstruktion</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='secret.css') }}">
+    </head>
+
+    <body>
+        
+            <p style="font-size: 25px;">
+                {{ header }}
+            </p>
+
+            <p>
+            <img src="{{ url_for('static', filename='eiffeltaarnet-scaled.jpeg') }}" class="eiffelpic" alt="logo" height="400"/>
+            </p>
+                Besked fra index:
+                <p>{{ message }}</p>
+
+            <p>
+            <a href="/"><button>Nina Gandrup</button></a>
+            </p>
+        <br>
+            <p style="font-size: 25px;">
+                Gustave Eiffel bro database:
+                <br>
+                <br>
+                <div style="list-style: none;">
+                    {% for row in architects %}
+                        <li>
+                            {{ row.name }}: {{ row.start_year }} - {{row.finished_year}} -> {{ row.Length }} m
+                        </li>
+                    {% endfor %}
+                </div>
+            </p>
+
+    </body>
+
+</html>

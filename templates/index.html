@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="App">
+        <header class="App-header">
+            <img src="{{ url_for('static', filename='slotshaven-logo.png') }}" class="App-logo" alt="logo" />
+            <p>
+                {{ name }}
+            </p>
+
+            <p class="small">
+                Skriv en besked og send til eiffeltårnet!
+            </p>
+
+            <form method="POST" action="{{ url_for('eiffeltårnet') }}">
+                <label for="index_input">Enter message:</label>
+                <input id="post_input_id" name="post_input" min="0" required>
+                <button type="submit">Send</button>
+            </form>
+
+            <p class="small">
+                Klik på nedstående knap for at gå til det sejeste tårn i hele verden!
+            </p>
+            <a href="/eiffeltårnet"><button>Eiffeltårnet</button></a>
+        </header>
+    </div>
+</body>
+
+</html>
